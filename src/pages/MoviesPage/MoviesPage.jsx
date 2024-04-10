@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SearchForm from "../../components/SearchForm/SearchForm";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import toast from "react-hot-toast";
 import { requestMovies } from "../../services/api";
 import MovieList from "../../components/MovieList/MovieList";
@@ -76,7 +76,7 @@ const MoviesPage = () => {
 
   return (
     <div>
-      <SearchForm onSubmit={onSubmit} />
+      <SearchBar onSubmit={onSubmit} />
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
       {movies !== null && Array.isArray(movies) && (

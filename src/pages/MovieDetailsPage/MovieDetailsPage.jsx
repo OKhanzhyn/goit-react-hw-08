@@ -4,7 +4,7 @@ import { requestMovieDetails } from "../../services/api";
 import Loader from "../../components/Loader/Loader";
 import toast from "react-hot-toast";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import AdditionalInformation from "../../components/AdditionalInformation/AdditionalInformation";
+import AddMovieInfo from "../../components/AddMovieInfo/AddMovieInfo";
 import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
@@ -86,7 +86,7 @@ const MovieDetailsPage = () => {
               </p>
             </div>
           </div>
-          <AdditionalInformation />
+          <AddMovieInfo />
         </div>
       )}
     </div>

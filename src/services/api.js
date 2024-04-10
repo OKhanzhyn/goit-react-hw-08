@@ -8,7 +8,7 @@ const options = (url, query) => {
     headers: {
       accept: "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2OGY3OTg1NmU1MmE1YmJjYTBlMTdkZjk2OTM4MGI2MyIsInN1YiI6IjY1ZmEwMjY1YTU4OTAyMDE4NjMxMjgxMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._XQ-7eAT6xxMgwyekRiLe0JxWpCbYVL8JvRPCZc7gSY",
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MTNmZTgyNmFmOWRiMDI0YjYxNTVlNmY5MTYyNDc2MSIsInN1YiI6IjY2MTZkN2NjMjljNjI2MDE3Y2EyMDQxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DrIi858538Q5w99lq4Tim0AxjZORejRd4rOI7g8k7t0",
     },
   };
 };
