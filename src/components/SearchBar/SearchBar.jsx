@@ -42,7 +42,7 @@ const SearchBar = ({ onSubmit }) => {
       type="text"
       autoComplete="off"
       autoFocus
-      placeholder="Search images and photos"
+      placeholder="Search movies"
       name="search"
       onChange={handleChange}
           value={query}
