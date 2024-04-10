@@ -28,13 +28,13 @@ const MovieList = ({ moviesList }) => {
                           className={css.image}
                           src={urlImage}
                           alt={title}
-                          width="150"
+                          width="100"
                         />
                       ) : (
                         <div className={css.changeImg}>{title}</div>
                       )}
                     </div>
-                    <div className={css.descrContiner}>
+                    <div className={css.descrContainer}>
                       <h2 className={css.title}>{title}</h2>
                       <p>
                         {release_date && release_date.slice(0, 4)}

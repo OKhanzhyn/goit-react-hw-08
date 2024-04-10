@@ -5,7 +5,8 @@
     justify-content: center;
     background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%)
         var(--_p, 100%) / 300% no-repeat,
-      var(--primary);
+      /* var(--primary) */
+      #918f8fdd;
     color: #0000;
     border: none;
   
@@ -23,7 +24,8 @@
   
   .link:focus,
   .link:hover {
-    background-color: var(--primarySecondary);
+    background-color: /*var(--primarySecondary)*/
+    #565555dd;
   }
   
   @media screen and (min-width: 1280px) {
@@ -48,5 +50,7 @@
   
   .active {
     border: 1px solid #0005;
-    background-color: var(--primarySecondary);
+    background-color: 
+    /*var(--primarySecondary)*/
+    #565555dd;;
   }
