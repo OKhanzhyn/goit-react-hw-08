@@ -4,9 +4,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%)
-        var(--_p, 100%) / 300% no-repeat,
-      /* var(--primary) */
-      #918f8fdd;
+        var(--_p, 100%) / 300% no-repeat, #918f8fdd;
     color: #0000;
     border: none;
   
@@ -24,10 +22,9 @@
   
   .link:focus,
   .link:hover {
-    background-color: /*var(--primarySecondary)*/
-    #565555dd;
+    background-color: #565555dd;
   }
-  
+  /*var(--primarySecondary)*/
   @media screen and (min-width: 1280px) {
     .link {
       transform: perspective(500px) rotateY(calc(20deg * var(--_i, -1)));
@@ -50,7 +47,6 @@
   
   .active {
     border: 1px solid #0005;
-    background-color: 
-    /*var(--primarySecondary)*/
-    #565555dd;;
+    background-color: #565555dd;;
   }
+  /*var(--primarySecondary)*/
