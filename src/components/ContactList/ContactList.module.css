@@ -1,0 +1,19 @@
+.contactList {
+  background-image: linear-gradient(90deg, #2b2a2a 20%, #ffffff2f, #2b2a2a2a);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contactListItem {
+  border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 320px;
+  gap: 8px;
+  background-color: #777776fe;
+}

@@ -1,0 +1,21 @@
+.form {
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 8px;
+  max-width: 320px;
+  background-color: var(--bg);
+}
+
+.label {
+  margin-bottom: 4px;
+  color: var(--text-light);
+  display: block;
+}
+
+.btn {
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;
+}

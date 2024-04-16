@@ -1,36 +1,65 @@
+import { useEffect, lazy } from "react";
+import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { Toaster } from "react-hot-toast";
+import { Layout } from "./components/Layout";
+import { PrivateRoute } from "./components/PrivateRoute";
+import { RestrictedRoute } from "./components/RestrictedRoute";
+import { refreshUser } from "./redux/auth/operations";
+import { useSelector } from "react-redux";
+import { selectIsRefreshing } from "./redux/auth/selectors";
 import Loader from "./components/Loader/Loader";
-import Layout from "./components/Layout/Layout";
+import "./App.css";
 
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
-const MovieDetailsPage = lazy(() =>
-  import("./pages/MovieDetailsPage/MovieDetailsPage")
-);
+const HomePage = lazy(() => import("./pages/Home"));
+const RegisterPage = lazy(() => import("./pages/Registration"));
+const LoginPage = lazy(() => import("./pages/Login"));
+const ContactsPage = lazy(() => import("./pages/Contacts"));
 
-const MovieReviews = lazy(() =>
-  import("./components/MovieReviews/MovieReviews")
-);
-const MovieCast = lazy(() => import("./components/MovieCast/MovieCast"));
+const App = () => {
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
-function App() {
-  return (
-    <Layout>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/movies/:movieId/*" element={<MovieDetailsPage />}>
-            <Route path="cast" element={<MovieCast />} />
-            <Route path="reviews" element={<MovieReviews />} />
-          </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
-    </Layout>
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <Loader />
+  ) : (
+    <>
+      <Toaster position="top-center" reverseOrder={false} />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
+        </Route>
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

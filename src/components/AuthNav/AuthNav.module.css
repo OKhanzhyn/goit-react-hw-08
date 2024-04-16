@@ -4,8 +4,8 @@
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     width: 100%;
-    background-color:  #898988fe;
-    border-radius: 4px;
+    background-color: var(--bg);
+    border-radius: 2px;
   }
   
   .link {
